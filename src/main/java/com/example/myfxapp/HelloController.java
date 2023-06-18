@@ -31,6 +31,8 @@ public class HelloController {
 
 
     public void changeScene(String endereco) {
+        if (endereco == null)   return;
+
         try {
             root = FXMLLoader.load(getClass().getResource(endereco));
             scene = new Scene(root);
