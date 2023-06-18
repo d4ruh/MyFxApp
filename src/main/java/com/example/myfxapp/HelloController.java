@@ -19,6 +19,8 @@ public class HelloController {
     @FXML
     private Button loginButton;
     @FXML
+    private Button logoutButton;
+    @FXML
     private Parent root;
     @FXML
     private Scene scene;
@@ -49,6 +51,32 @@ public class HelloController {
     @FXML
     protected void onLoginButtonClick() {
         validateLogin();
+    }
+
+    @FXML
+    protected void onLogoutButtonClick() {
+        stage = (Stage) logoutButton.getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    protected void onConsultarEstoqueButtonClick() {
+    }
+
+    @FXML
+    protected void onAtualizarEstoqueButtonClick() {
+    }
+
+    @FXML
+    protected void onRegistrarUsuarioButtonClick() {
+    }
+
+    @FXML
+    protected void onRegistrarVendaButtonClick() {
+    }
+
+    @FXML
+    protected void onConsultarPerfilClick() {
     }
 
     public void validateLogin() {
