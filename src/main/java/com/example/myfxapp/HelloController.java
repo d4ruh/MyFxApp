@@ -56,6 +56,8 @@ public class HelloController {
         String verifyLogin = "select count(1) from registro_usuarios where username = '" + usernameText.getText() + "' and password = '" + passwordText.getText() + "';";
 
         try {
+            System.out.println("teste primeiro commit");
+
             Statement stmt = conDB.createStatement();
             ResultSet rs = stmt.executeQuery(verifyLogin);
 
