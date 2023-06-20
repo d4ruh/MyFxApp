@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Random;
 
 public class HelloApplication extends Application {
     @Override
@@ -20,5 +21,9 @@ public class HelloApplication extends Application {
 
     public static void main(String[] args) {
         launch();
+//        EmailController email= new EmailController();
+//
+//        email.enviarEmail("rafasilvam220@gmail.com");
+
     }
 }

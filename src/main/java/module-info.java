@@ -4,6 +4,8 @@ module com.example.myfxapp {
 
     requires java.sql;
 
+    requires java.mail;
+
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
 

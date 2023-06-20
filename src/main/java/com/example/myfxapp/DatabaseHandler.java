@@ -7,10 +7,12 @@ public class DatabaseHandler {
     public Connection dbLink;
 
     public Connection getConnection() {
-        String dbName = "teste";
-        String dbUser = "root";
-        String dbPassword = "r0LP0t_?1T";
-        String url = "jdbc:mysql://localhost:3306/" + dbName;
+        String dbName = DadosSenhas.get().getDbName();
+        String dbUser = DadosSenhas.get().getDbUser();
+        String dbPassword = DadosSenhas.get().getDbPassword();
+        String url = DadosSenhas.get().getUrl();
+
+
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
