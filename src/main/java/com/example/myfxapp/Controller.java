@@ -2,6 +2,7 @@ package com.example.myfxapp;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -9,30 +10,23 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class HelloController {
-    @FXML
-    private Label loginText;
-    @FXML
-    private Button loginButton;
-    @FXML
-    private Button logoutButton;
-    @FXML
-    private Parent root;
-    @FXML
-    private Scene scene;
-    @FXML
-    private Stage stage;
-    @FXML
-    private TextField usernameText;
-    @FXML
-    private PasswordField passwordText;
+public class Controller {
+    @FXML private Parent root;
+    @FXML private Scene scene;
+    @FXML private Stage stage;
+
+    @FXML private Label loginText;
+    @FXML private Button loginButton;
+    @FXML private TextField usernameText;
+    @FXML private PasswordField passwordText;
 
 
-    public void changeScene(String endereco) {
+    public void changeScene(String endereco, Stage stageAnterior) {
         if (endereco == null)   return;
 
         try {
@@ -42,6 +36,7 @@ public class HelloController {
             stage.setTitle("Hello!");
             stage.setScene(scene);
             stage.show();
+            stageAnterior.close();
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
@@ -53,37 +48,11 @@ public class HelloController {
         validateLogin();
     }
 
-    @FXML
-    protected void onLogoutButtonClick() {
-        stage = (Stage) logoutButton.getScene().getWindow();
-        stage.close();
-    }
-
-    @FXML
-    protected void onConsultarEstoqueButtonClick() {
-    }
-
-    @FXML
-    protected void onAtualizarEstoqueButtonClick() {
-    }
-
-    @FXML
-    protected void onRegistrarUsuarioButtonClick() {
-    }
-
-    @FXML
-    protected void onRegistrarVendaButtonClick() {
-    }
-
-    @FXML
-    protected void onConsultarPerfilClick() {
-    }
-
     public void validateLogin() {
         DatabaseHandler connect = new DatabaseHandler();
         Connection conDB = connect.getConnection();
 
-        String verifyLogin = "select count(1) from registro_usuarios where username = '" + usernameText.getText() + "' and password = '" + passwordText.getText() + "';";
+        String verifyLogin = "select count(1) from registro_vendedor where username = '" + usernameText.getText() + "' and password = '" + passwordText.getText() + "';";
 
         try {
 
@@ -92,9 +61,8 @@ public class HelloController {
 
             while (rs.next()) {
                 if (rs.getInt(1) == 1) {
-                    changeScene("teste.fxml");
-                    stage = (Stage) loginButton.getScene().getWindow();
-                    stage.close();
+                    Data.userLogedIn = usernameText.getText();
+                    changeScene("menu01.fxml", (Stage) loginButton.getScene().getWindow());
                     conDB.close();
                     return;
                 }
@@ -102,11 +70,12 @@ public class HelloController {
                     loginText.setText("dados invalidos, digite novamente");
                     usernameText.setText("");
                     passwordText.setText("");
+                    return;
                 }
             }
         }
         catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 }
