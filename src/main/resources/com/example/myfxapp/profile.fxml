@@ -12,6 +12,11 @@
 
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myfxapp.ProfileController">
    <children>
+      <TextField maxHeight="0.0" minHeight="0.0" prefHeight="0.0">
+         <VBox.margin>
+            <Insets top="-5.0" />
+         </VBox.margin>
+      </TextField>
       <GridPane prefHeight="296.0" prefWidth="551.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="268.0" minWidth="10.0" prefWidth="75.0" />
@@ -34,42 +39,42 @@
             <Label text="Endereço:" GridPane.rowIndex="3" />
             <Label text="Email:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <Label text="Telefone:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <TextField editable="false" GridPane.columnIndex="1">
+            <TextField fx:id="nomeText" editable="false" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets right="40.0" />
                </GridPane.margin>
             </TextField>
-            <TextField editable="false" GridPane.columnIndex="3">
+            <TextField fx:id="usernameText" editable="false" GridPane.columnIndex="3">
                <GridPane.margin>
                   <Insets right="40.0" />
                </GridPane.margin>
             </TextField>
-            <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <TextField fx:id="sobrenomeText" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets right="40.0" />
                </GridPane.margin>
             </TextField>
-            <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+             <TextField fx:id="passwordText" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                 <GridPane.margin>
+                     <Insets right="40.0" />
+                 </GridPane.margin>
+             </TextField>
+            <TextField fx:id="cpfText" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="40.0" />
                </GridPane.margin>
             </TextField>
-            <TextField editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+             <TextField fx:id="emailText" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                 <GridPane.margin>
+                     <Insets right="40.0" />
+                 </GridPane.margin>
+             </TextField>
+            <TextField fx:id="enderecoText" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets right="40.0" />
                </GridPane.margin>
             </TextField>
-            <TextField editable="false" GridPane.columnIndex="3" GridPane.rowIndex="1">
-               <GridPane.margin>
-                  <Insets right="40.0" />
-               </GridPane.margin>
-            </TextField>
-            <TextField editable="false" GridPane.columnIndex="3" GridPane.rowIndex="2">
-               <GridPane.margin>
-                  <Insets right="40.0" />
-               </GridPane.margin>
-            </TextField>
-            <TextField editable="false" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <TextField fx:id="telefoneText" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets right="40.0" />
                </GridPane.margin>
