@@ -55,7 +55,6 @@ public class Controller {
         String verifyLogin = "select count(1) from registro_vendedor where username = '" + usernameText.getText() + "' and password = '" + passwordText.getText() + "';";
 
         try {
-
             Statement stmt = conDB.createStatement();
             ResultSet rs = stmt.executeQuery(verifyLogin);
 
