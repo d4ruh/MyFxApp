@@ -17,5 +17,5 @@
    <TextField fx:id="usernameText" promptText="user name" />
    <PasswordField fx:id="passwordText" promptText="password" />
     <Button fx:id="loginButton" onAction="#onLoginButtonClick" text="login" />
-   <Button mnemonicParsing="false" text="Esqueci minha senha" />
+   <Button fx:id="esqueciButton" mnemonicParsing="false" onAction="#onEsqueciButtonClick" text="Esqueci minha senha" />
 </VBox>

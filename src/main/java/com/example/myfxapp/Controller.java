@@ -24,6 +24,7 @@ public class Controller {
     @FXML private Button loginButton;
     @FXML private TextField usernameText;
     @FXML private PasswordField passwordText;
+    @FXML private Button esqueciButton;
 
 
     public void changeScene(String endereco, Stage stageAnterior) {
@@ -46,6 +47,12 @@ public class Controller {
     @FXML
     protected void onLoginButtonClick() {
         validateLogin();
+    }
+
+    @FXML
+    protected void onEsqueciButtonClick(){
+        changeScene("RenovarSenha.fxml", (Stage) esqueciButton.getScene().getWindow());
+
     }
 
     public void validateLogin() {

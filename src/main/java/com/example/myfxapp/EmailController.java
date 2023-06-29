@@ -8,7 +8,8 @@ import java.util.Random;
 
 public class EmailController {
     private String senha= DadosSenhas.get().getSenhaEmail();
-    private String remetente=DadosSenhas.get().getSenhaEmail();
+    private String remetente=DadosSenhas.get().getEmail();
+    public String codigo=codigoSeguranca();
 
     public void enviarEmail(String destinatario){
         Properties properties=new Properties();
@@ -32,12 +33,13 @@ public class EmailController {
             message.setFrom(new InternetAddress(remetente));
             message.setRecipients(Message.RecipientType.TO,address);
             message.setSubject("Codigo de seguranca para mudanca de senha");
-            message.setText("Para resetar sua senha digite esse codigo\nCodigo: "+codigoSeguranca());
+            message.setText("Para resetar sua senha digite esse codigo\nCodigo: "+codigo);
 
             Transport.send(message);
         }catch(MessagingException e){
             e.printStackTrace();
         }
+
     }
 
     private String codigoSeguranca() {
