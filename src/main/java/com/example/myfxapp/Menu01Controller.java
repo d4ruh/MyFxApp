@@ -18,7 +18,7 @@ public class Menu01Controller implements Initializable{
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
-        bemVindoText.setText(Data.userLogedIn);
+        bemVindoText.setText("Bem vindo, " + Data.userLogedIn + "!");
     }
 
     @FXML
@@ -29,7 +29,7 @@ public class Menu01Controller implements Initializable{
 
     @FXML
     protected void onConsultarEstoqueButtonClick() {
-        new Controller().changeScene("consultarEstoque.fxml", (Stage) consultarEstoqueButton.getScene().getWindow());
+        new Controller().changeScene("consultarEstoque.fxml","WoodPecker Furniture - Menu", (Stage) consultarEstoqueButton.getScene().getWindow());
     }
 
     @FXML
