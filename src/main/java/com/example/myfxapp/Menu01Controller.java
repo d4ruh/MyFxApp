@@ -23,7 +23,7 @@ public class Menu01Controller implements Initializable{
 
     @FXML
     protected void onLogoutButtonClick() {
-        new Controller().changeScene("login.fxml", (Stage) logoutButton.getScene().getWindow());
+        new Controller().changeScene("login.fxml","WoodPecker Furniture - login", (Stage) logoutButton.getScene().getWindow());
         Data.userLogedIn = null;
     }
 
@@ -46,6 +46,6 @@ public class Menu01Controller implements Initializable{
 
     @FXML
     protected void onConsultarPerfilClick() {
-        new Controller().changeScene("profile.fxml", (Stage) consultarPerfilButton.getScene().getWindow());
+        new Controller().changeScene("profile.fxml", "Perfil",(Stage) consultarPerfilButton.getScene().getWindow());
     }
 }
