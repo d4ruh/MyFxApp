@@ -14,6 +14,7 @@ public class Menu01Controller implements Initializable{
     private Button logoutButton;
     @FXML private Label bemVindoText;
     @FXML private Button consultarPerfilButton;
+    @FXML private Button consultarEstoqueButton;
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
@@ -28,6 +29,7 @@ public class Menu01Controller implements Initializable{
 
     @FXML
     protected void onConsultarEstoqueButtonClick() {
+        new Controller().changeScene("consultarEstoque.fxml", (Stage) consultarEstoqueButton.getScene().getWindow());
     }
 
     @FXML
