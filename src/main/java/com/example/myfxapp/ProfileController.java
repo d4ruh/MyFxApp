@@ -19,9 +19,9 @@ public class ProfileController implements Initializable {
 
     @FXML TextField nomeText;
     @FXML TextField usernameText;
-    @FXML TextField sobrenomeText;
+    @FXML TextField vendasText;
     @FXML TextField cpfText;
-    @FXML TextField enderecoText;
+    @FXML TextField comissaoText;
     @FXML TextField passwordText;
     @FXML TextField emailText;
     @FXML TextField telefoneText;
@@ -40,12 +40,12 @@ public class ProfileController implements Initializable {
             while (rs.next()) {
                 usernameText.setText(rs.getString(1));
                 passwordText.setText(rs.getString(2));
-                nomeText.setText(rs.getString(3));
-                sobrenomeText.setText(rs.getString(4));
+                nomeText.setText(rs.getString(3) + " " + rs.getString(4));
                 emailText.setText(rs.getString(5));
                 telefoneText.setText(rs.getString(6));
                 cpfText.setText(rs.getString(7));
-                enderecoText.setText(rs.getString(8));
+                vendasText.setText(rs.getString(8));
+                comissaoText.setText(rs.getString(9));
             }
         }
         catch (Exception e) {

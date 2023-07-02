@@ -32,24 +32,19 @@
         </rowConstraints>
          <children>
             <Label text="Nome:" />
-            <Label text="Sobrenome:" GridPane.rowIndex="1" />
+            <Label text="Email:" GridPane.rowIndex="1" />
             <Label text="Username:" GridPane.columnIndex="2" />
             <Label text="Password:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <Label text="CPF:" GridPane.rowIndex="2" />
-            <Label text="Endereço:" GridPane.rowIndex="3" />
-            <Label text="Email:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Label text="Telefone:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label text="Telefone:" GridPane.rowIndex="3" />
+            <Label text="Num. Vendas:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label text="Comissão:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <TextField fx:id="nomeText" editable="false" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets right="40.0" />
                </GridPane.margin>
             </TextField>
             <TextField fx:id="usernameText" editable="false" GridPane.columnIndex="3">
-               <GridPane.margin>
-                  <Insets right="40.0" />
-               </GridPane.margin>
-            </TextField>
-            <TextField fx:id="sobrenomeText" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets right="40.0" />
                </GridPane.margin>
@@ -64,17 +59,22 @@
                   <Insets right="40.0" />
                </GridPane.margin>
             </TextField>
-             <TextField fx:id="emailText" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="2">
+             <TextField fx:id="emailText" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                  <GridPane.margin>
                      <Insets right="40.0" />
                  </GridPane.margin>
              </TextField>
-            <TextField fx:id="enderecoText" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <TextField fx:id="vendasText" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="40.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="telefoneText" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <TextField fx:id="telefoneText" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets right="40.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="comissaoText" editable="false" GridPane.columnIndex="3" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets right="40.0" />
                </GridPane.margin>
