@@ -15,7 +15,7 @@ public class EsqueciSenhaController {
 
 
 
-    private EmailController emailController = new EmailController();
+    private EmailHandler emailController = new EmailHandler();
 
     @FXML
     protected void onEnviarCodigoButtonClick(){
