@@ -6,7 +6,7 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 import java.util.Random;
 
-public class EmailController {
+public class EmailHandler {
     private String senha= DadosSenhas.get().getSenhaEmail();
     private String remetente=DadosSenhas.get().getEmail();
     public String codigo=codigoSeguranca();

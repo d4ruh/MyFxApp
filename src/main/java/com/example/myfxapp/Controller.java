@@ -9,8 +9,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -34,7 +36,9 @@ public class Controller {
             root = FXMLLoader.load(getClass().getResource(endereco));
             scene = new Scene(root);
             stage = new Stage();
+            Image icon= new Image(new File("src/main/java/com/example/myfxapp/imagens/icon/Logo.png").toURI().toString());
             stage.setTitle("Hello!");
+            stage.getIcons().add(icon);
             stage.setScene(scene);
             stage.show();
             stageAnterior.close();
