@@ -55,12 +55,12 @@ public class ProfileController implements Initializable {
 
     @FXML
     protected void onLogoutButtonClick() {
-        new Controller().changeScene("login.fxml", (Stage) logoutButton.getScene().getWindow());
+        new Controller().changeScene("login.fxml", "WoodPecker Furniture - login",(Stage) logoutButton.getScene().getWindow());
         Data.userLogedIn = null;
     }
 
     @FXML
     protected void onVoltarButtonClick() {
-        new Controller().changeScene("menu01.fxml", (Stage) voltarButton.getScene().getWindow());
+        new Controller().changeScene("menu01.fxml", "Menu Principal",(Stage) voltarButton.getScene().getWindow());
     }
 }

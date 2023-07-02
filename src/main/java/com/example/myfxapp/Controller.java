@@ -29,7 +29,7 @@ public class Controller {
     @FXML private Button esqueciButton;
 
 
-    public void changeScene(String endereco, Stage stageAnterior) {
+    public void changeScene(String endereco, String titulo,Stage stageAnterior) {
         if (endereco == null)   return;
 
         try {
@@ -37,7 +37,7 @@ public class Controller {
             scene = new Scene(root);
             stage = new Stage();
             Image icon= new Image(new File("src/main/java/com/example/myfxapp/imagens/icon/Logo.png").toURI().toString());
-            stage.setTitle("Hello!");
+            stage.setTitle(titulo);
             stage.getIcons().add(icon);
             stage.setScene(scene);
             stage.show();
@@ -55,7 +55,7 @@ public class Controller {
 
     @FXML
     protected void onEsqueciButtonClick(){
-        changeScene("RenovarSenha.fxml", (Stage) esqueciButton.getScene().getWindow());
+        changeScene("RenovarSenha.fxml","Esqueci minha senha", (Stage) esqueciButton.getScene().getWindow());
 
     }
 
@@ -72,7 +72,7 @@ public class Controller {
             while (rs.next()) {
                 if (rs.getInt(1) == 1) {
                     Data.userLogedIn = usernameText.getText();
-                    changeScene("menu01.fxml", (Stage) loginButton.getScene().getWindow());
+                    changeScene("menu01.fxml", "Menu Principal",(Stage) loginButton.getScene().getWindow());
                     conDB.close();
                     return;
                 }

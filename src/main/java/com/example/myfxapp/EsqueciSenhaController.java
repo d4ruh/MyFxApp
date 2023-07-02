@@ -32,7 +32,7 @@ public class EsqueciSenhaController {
 
     @FXML
     protected void onVoltarButtonClick(){
-        new Controller().changeScene("login.fxml", (Stage) voltarButton.getScene().getWindow());
+        new Controller().changeScene("login.fxml", "WoodPecker Furniture - login",(Stage) voltarButton.getScene().getWindow());
     }
 
 
