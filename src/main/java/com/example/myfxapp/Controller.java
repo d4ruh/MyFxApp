@@ -29,7 +29,6 @@ public class Controller {
     @FXML private Button esqueciButton;
 
 
-
     public void changeScene(String endereco, String titulo,Stage stageAnterior) {
         if (endereco == null)   return;
 
@@ -63,10 +62,6 @@ public class Controller {
     public void validateLogin() {
         DatabaseHandler connect = new DatabaseHandler();
         Connection conDB = connect.getConnection();
-        if(usernameText.getText().equals("")||passwordText.getText().equals("")){
-            loginText.setText("dados invalidos, digite novamente");
-            return;
-        }
 
         String verifyLogin = "select count(1) from registro_vendedor where username = '" + usernameText.getText() + "' and password = '" + passwordText.getText() + "';";
 
