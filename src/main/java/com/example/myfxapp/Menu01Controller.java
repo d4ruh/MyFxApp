@@ -19,7 +19,7 @@ public class Menu01Controller implements Initializable{
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
-        bemVindoText.setText(Data.userLogedIn);
+        bemVindoText.setText("Bemvindo, " + Data.userLogedIn + "!");
     }
 
     @FXML
@@ -30,7 +30,7 @@ public class Menu01Controller implements Initializable{
 
     @FXML
     protected void onConsultarEstoqueButtonClick() {
-        new Controller().changeScene("consultarEstoque.fxml","WoodPecker Furniture - Menu", (Stage) consultarEstoqueButton.getScene().getWindow());
+        new Controller().changeScene("consultarEstoque.fxml","WoodPecker Furniture - Estoque", (Stage) consultarEstoqueButton.getScene().getWindow());
     }
 
     @FXML
@@ -39,7 +39,7 @@ public class Menu01Controller implements Initializable{
 
     @FXML
     protected void onRegistrarUsuarioButtonClick() {
-        new Controller().changeScene("registroUsuario.fxml", "Cadastrar Usuario", (Stage) registrarUsuarioButton.getScene().getWindow());
+        new Controller().changeScene("registroUsuario.fxml", "WoodPecker Furniture - Cadastrar Usuario", (Stage) registrarUsuarioButton.getScene().getWindow());
     }
 
     @FXML
@@ -48,6 +48,6 @@ public class Menu01Controller implements Initializable{
 
     @FXML
     protected void onConsultarPerfilClick() {
-        new Controller().changeScene("profile.fxml", "Perfil",(Stage) consultarPerfilButton.getScene().getWindow());
+        new Controller().changeScene("profile.fxml", "WoodPecker Furniture - Perfil",(Stage) consultarPerfilButton.getScene().getWindow());
     }
 }

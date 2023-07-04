@@ -47,10 +47,13 @@ public class RegistroUsuarioController {
 public boolean cadastraUsuario(){
     DatabaseHandler connect = new DatabaseHandler();
     Connection conDB = connect.getConnection();
+
     if(cpfTextField.getText().isEmpty()||usernameTextField.getText().isEmpty()||senhaTextField.getText().isEmpty()) {
         return false;
     }
+
     String criarUsuario= "insert into registro_vendedor(username,password,nome,sobrenome,email,telefone,cpf,num_vendas,valor_comissao) values('"+usernameTextField.getText()+"','"+senhaTextField.getText()+"','"+nomeTextField.getText()+"','"+sobrenomeTextField.getText()+"','"+ emailTextField.getText()+"','"+telefoneTextField.getText()+"','"+cpfTextField.getText()+"',0,0.0);";
+
     try{
         Statement stmt=conDB.createStatement();
         stmt.executeUpdate(criarUsuario);

@@ -54,6 +54,32 @@ public class EstoqueController implements Initializable {
             modoBusca = "valor";
             System.out.println(modoBusca);
         });
+
+        DatabaseHandler connect = new DatabaseHandler();
+        Connection conDB = connect.getConnection();
+        String getData;
+
+        getData = "select nome, classe, quantidade, valor from registro_estoque_produtos;";
+
+        try {
+            Statement stmt = conDB.createStatement();
+            ResultSet rs = stmt.executeQuery(getData);
+
+            ObservableList<Produto> listaProdutos = tabela.getItems();
+            listaProdutos.clear();
+
+            while (rs.next()) {
+                Produto produto = new Produto( rs.getString(1), rs.getString(2),
+                        rs.getInt(3), rs.getDouble(4));
+
+                listaProdutos.add(produto);
+            }
+
+            tabela.setItems(listaProdutos);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @FXML
@@ -98,24 +124,52 @@ public class EstoqueController implements Initializable {
 
     @FXML
     protected void onRemoverButtonClick() {
+        TablePosition pos = tabela.getSelectionModel().getSelectedCells().get(0);
+        int row = pos.getRow();
 
+        Produto item = tabela.getItems().get(row);
+        String data = colNome.getCellObservableValue(item).getValue().toString();
+
+        DatabaseHandler connect = new DatabaseHandler();
+        Connection conDB = connect.getConnection();
+
+        String deletarProduto = "delete from registro_estoque_produtos where nome = '" + data + "';";
+
+        try {
+            Statement stmt=conDB.createStatement();
+            stmt.executeUpdate(deletarProduto);
+
+            conDB.close();
+
+            int idSelecionado = tabela.getSelectionModel().getSelectedIndex();
+            tabela.getItems().remove(idSelecionado);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @FXML
     protected void onAdicionarButtonClick() {
-        new Controller().changeScene("login.fxml", "WoodPecker Furniture - login",(Stage) adicionarButton.getScene().getWindow());
-        Data.userLogedIn = null;
+        new Controller().changeScene("registroProduto.fxml", "WoodPecker Furniture - Dados de Produto", (Stage) adicionarButton.getScene().getWindow());
     }
 
     @FXML
     protected void onAlterarButtonClick() {
-        new Controller().changeScene("login.fxml", "WoodPecker Furniture - login",(Stage) alterarButton.getScene().getWindow());
-        Data.userLogedIn = null;
+        TablePosition pos = tabela.getSelectionModel().getSelectedCells().get(0);
+        int row = pos.getRow();
+
+        Produto item = tabela.getItems().get(row);
+        String data = colNome.getCellObservableValue(item).getValue().toString();
+
+        Data.produtoSelecionado = data;
+
+        new Controller().changeScene("registroProduto.fxml", "WoodPecker Furniture - Dados de Produto", (Stage) alterarButton.getScene().getWindow());
     }
 
 
     @FXML
     protected void onVoltarButtonClick() {
-        new Controller().changeScene("menu01.fxml", "Menu Principal",(Stage) voltarButton.getScene().getWindow());
+        new Controller().changeScene("menu01.fxml", "WoodPecker Furniture - Estoque",(Stage) voltarButton.getScene().getWindow());
     }
 }

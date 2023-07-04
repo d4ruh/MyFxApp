@@ -29,7 +29,7 @@ public class Controller {
     @FXML private Button esqueciButton;
 
 
-    public void changeScene(String endereco, String titulo,Stage stageAnterior) {
+    public void changeScene(String endereco, String titulo, Stage stageAnterior) {
         if (endereco == null)   return;
 
         try {
@@ -80,6 +80,7 @@ public class Controller {
                     loginText.setText("dados invalidos, digite novamente");
                     usernameText.setText("");
                     passwordText.setText("");
+                    conDB.close();
                     return;
                 }
             }
