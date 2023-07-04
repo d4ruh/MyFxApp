@@ -38,7 +38,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                <children>
-                  <Button fx:id="atualizarEstoqueButton" layoutX="-18.0" layoutY="1.0" mnemonicParsing="false" onAction="#onAtualizarEstoqueButtonClick" text="Atualizar Estoque" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button fx:id="registrarClienteButton" layoutX="-18.0" layoutY="1.0" mnemonicParsing="false" onAction="#onRegistrarClienteButtonClick" text="Registrar Cliente" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
