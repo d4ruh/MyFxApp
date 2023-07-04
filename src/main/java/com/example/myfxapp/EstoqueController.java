@@ -84,15 +84,19 @@ public class EstoqueController implements Initializable {
 
     @FXML
     public void onPesquisarButtonClick() {
+        if (modoBusca == null) {
+            return;
+        }
+
         DatabaseHandler connect = new DatabaseHandler();
         Connection conDB = connect.getConnection();
         String getData;
 
         if (modoBusca.equals("valor")) {
-            getData = "select nome, classe, quantidade, valor from registro_estoque_produtos where " + modoBusca + " < " + Double.parseDouble(pesquisaText.getText()) + ";";
+            getData = "select nome, classe, quantidade, valor from registro_estoque_produtos where " + modoBusca + " <= " + Double.parseDouble(pesquisaText.getText()) + ";";
         }
         else {
-            getData = "select nome, classe, quantidade, valor from registro_estoque_produtos where " + modoBusca + " = '" + pesquisaText.getText() + "';";
+            getData = "select nome, classe, quantidade, valor from registro_estoque_produtos where " + modoBusca + " like '%" + pesquisaText.getText() + "%';";
         }
 
         try {
