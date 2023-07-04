@@ -3,11 +3,9 @@ package com.example.myfxapp;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -27,6 +25,11 @@ public class EstoqueController implements Initializable {
     @FXML private MenuItem valorOption;
 
     @FXML private TextField pesquisaText;
+
+    @FXML private Button adicionarButton;
+    @FXML private Button alterarButton;
+    @FXML private Button logoutButton;
+    @FXML private Button voltarButton;
 
     private String modoBusca;
 
@@ -85,5 +88,34 @@ public class EstoqueController implements Initializable {
         catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    @FXML
+    protected void onLogoutButtonClick() {
+        new Controller().changeScene("login.fxml", "WoodPecker Furniture - login",(Stage) logoutButton.getScene().getWindow());
+        Data.userLogedIn = null;
+    }
+
+    @FXML
+    protected void onRemoverButtonClick() {
+
+    }
+
+    @FXML
+    protected void onAdicionarButtonClick() {
+        new Controller().changeScene("login.fxml", "WoodPecker Furniture - login",(Stage) adicionarButton.getScene().getWindow());
+        Data.userLogedIn = null;
+    }
+
+    @FXML
+    protected void onAlterarButtonClick() {
+        new Controller().changeScene("login.fxml", "WoodPecker Furniture - login",(Stage) alterarButton.getScene().getWindow());
+        Data.userLogedIn = null;
+    }
+
+
+    @FXML
+    protected void onVoltarButtonClick() {
+        new Controller().changeScene("menu01.fxml", "Menu Principal",(Stage) voltarButton.getScene().getWindow());
     }
 }

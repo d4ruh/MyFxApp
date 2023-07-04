@@ -14,6 +14,8 @@ public class Menu01Controller implements Initializable{
     private Button logoutButton;
     @FXML private Label bemVindoText;
     @FXML private Button consultarPerfilButton;
+    @FXML private Button consultarEstoqueButton;
+    @FXML private Button registrarUsuarioButton;
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
@@ -28,6 +30,7 @@ public class Menu01Controller implements Initializable{
 
     @FXML
     protected void onConsultarEstoqueButtonClick() {
+        new Controller().changeScene("consultarEstoque.fxml","WoodPecker Furniture - Menu", (Stage) consultarEstoqueButton.getScene().getWindow());
     }
 
     @FXML
@@ -36,6 +39,7 @@ public class Menu01Controller implements Initializable{
 
     @FXML
     protected void onRegistrarUsuarioButtonClick() {
+        new Controller().changeScene("registroUsuario.fxml", "Cadastrar Usuario", (Stage) registrarUsuarioButton.getScene().getWindow());
     }
 
     @FXML
