@@ -13,19 +13,19 @@ public class Produto {
         this.valor = valor;
     }
 
-    public double getValor() {
-        return valor;
+    public String getNome() {
+        return nome;
     }
 
     public String getClasse() {
         return classe;
     }
 
-    public int getQuantidade() {
+    public Integer getQuantidade() {
         return quantidade;
     }
 
-    public String getNome() {
-        return nome;
+    public Double getValor() {
+        return valor;
     }
 }

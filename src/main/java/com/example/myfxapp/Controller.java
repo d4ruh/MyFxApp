@@ -28,7 +28,6 @@ public class Controller {
     @FXML private PasswordField passwordText;
     @FXML private Button esqueciButton;
 
-
     public void changeScene(String endereco, String titulo, Stage stageAnterior) {
         if (endereco == null)   return;
 

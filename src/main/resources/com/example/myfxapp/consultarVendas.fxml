@@ -55,12 +55,12 @@
       </GridPane>
       <TableView fx:id="tabela" maxWidth="480.0" prefHeight="200.0" prefWidth="574.0">
          <columns>
-            <TableColumn prefWidth="125.0" text="Nome do Produto" />
-            <TableColumn prefWidth="115.0" text="CPF do Cliente" />
-            <TableColumn prefWidth="115.0" text="CPF do Vendedor" />
-            <TableColumn prefWidth="115.0" text="Preço do Produto" />
-            <TableColumn prefWidth="150.0" text="Quantidade Comprada" />
-            <TableColumn prefWidth="100.0" text="Valor Total" />
+            <TableColumn fx:id="nomeProdutoCol" prefWidth="125.0" text="Nome do Produto" />
+            <TableColumn fx:id="cpfClienteCol" prefWidth="115.0" text="CPF do Cliente" />
+            <TableColumn fx:id="cpfVendedorCol" prefWidth="115.0" text="CPF do Vendedor" />
+            <TableColumn fx:id="valorCol" prefWidth="115.0" text="Preço do Produto" />
+            <TableColumn fx:id="quantCol" prefWidth="150.0" text="Quantidade Comprada" />
+            <TableColumn fx:id="valorTotalCol" prefWidth="100.0" text="Valor Total" />
          </columns>
          <VBox.margin>
             <Insets bottom="25.0" top="25.0" />
