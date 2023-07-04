@@ -15,11 +15,13 @@ public class Menu01Controller implements Initializable{
     @FXML private Label bemVindoText;
     @FXML private Button consultarPerfilButton;
     @FXML private Button consultarEstoqueButton;
+    @FXML private Button registrarClienteButton;
     @FXML private Button registrarUsuarioButton;
+
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
-        bemVindoText.setText("Bemvindo, " + Data.userLogedIn + "!");
+        bemVindoText.setText("Olá,seja Bem-vindo "+Data.userLogedIn);
     }
 
     @FXML
@@ -30,24 +32,25 @@ public class Menu01Controller implements Initializable{
 
     @FXML
     protected void onConsultarEstoqueButtonClick() {
-        new Controller().changeScene("consultarEstoque.fxml","WoodPecker Furniture - Estoque", (Stage) consultarEstoqueButton.getScene().getWindow());
+        new Controller().changeScene("consultarEstoque.fxml","Consultar estoque",(Stage) consultarEstoqueButton.getScene().getWindow());
     }
 
     @FXML
-    protected void onAtualizarEstoqueButtonClick() {
+    protected void onRegistrarClienteButtonClick() {
     }
 
     @FXML
     protected void onRegistrarUsuarioButtonClick() {
-        new Controller().changeScene("registroUsuario.fxml", "WoodPecker Furniture - Cadastrar Usuario", (Stage) registrarUsuarioButton.getScene().getWindow());
+        new Controller().changeScene("registroUsuario.fxml", "Cadastrar Vendedor ",(Stage) registrarUsuarioButton.getScene().getWindow());
     }
 
     @FXML
     protected void onRegistrarVendaButtonClick() {
+        new Controller().changeScene("registrarCliente.fxml", "Cadastrar Cliente", (Stage) registrarClienteButton.getScene().getWindow());
     }
 
     @FXML
     protected void onConsultarPerfilClick() {
-        new Controller().changeScene("profile.fxml", "WoodPecker Furniture - Perfil",(Stage) consultarPerfilButton.getScene().getWindow());
+        new Controller().changeScene("profile.fxml", "Perfil",(Stage) consultarPerfilButton.getScene().getWindow());
     }
 }

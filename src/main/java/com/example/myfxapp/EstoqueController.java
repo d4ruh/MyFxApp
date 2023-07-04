@@ -42,17 +42,16 @@ public class EstoqueController implements Initializable {
 
         nomeOption.setOnAction(event -> {
             modoBusca = "nome";
-            System.out.println(modoBusca);
+
         });
 
         classeOption.setOnAction(event -> {
             modoBusca = "classe";
-            System.out.println(modoBusca);
+
         });
 
         valorOption.setOnAction(event -> {
             modoBusca = "valor";
-            System.out.println(modoBusca);
         });
 
         DatabaseHandler connect = new DatabaseHandler();
@@ -91,7 +90,6 @@ public class EstoqueController implements Initializable {
         DatabaseHandler connect = new DatabaseHandler();
         Connection conDB = connect.getConnection();
         String getData;
-
         if (modoBusca.equals("valor")) {
             getData = "select nome, classe, quantidade, valor from registro_estoque_produtos where " + modoBusca + " <= " + Double.parseDouble(pesquisaText.getText()) + ";";
         }
@@ -108,7 +106,7 @@ public class EstoqueController implements Initializable {
 
             while (rs.next()) {
                 Produto produto = new Produto( rs.getString(1), rs.getString(2),
-                                                rs.getInt(3), rs.getDouble(4));
+                                                rs.getInt(3), +rs.getDouble(4));
 
                 listaProdutos.add(produto);
             }
@@ -133,7 +131,7 @@ public class EstoqueController implements Initializable {
 
         Produto item = tabela.getItems().get(row);
         String data = colNome.getCellObservableValue(item).getValue().toString();
-
+//
         DatabaseHandler connect = new DatabaseHandler();
         Connection conDB = connect.getConnection();
 
