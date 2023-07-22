@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myfxapp.EstoqueController">
+   <children>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="194.4000244140625" minWidth="10.0" prefWidth="98.39995117187499" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="352.0" minWidth="10.0" prefWidth="348.800048828125" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <MenuButton layoutX="33.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0" text="Buscar Via" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <MenuItem fx:id="nomeOption" mnemonicParsing="false" text="Nome" />
+                      <MenuItem fx:id="classeOption" mnemonicParsing="false" text="Classificação" />
+                        <MenuItem fx:id="valorOption" mnemonicParsing="false" text="Preço Máximo" />
+                    </items>
+                  </MenuButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="30.0" prefWidth="278.0" GridPane.columnIndex="1">
+               <children>
+                  <TextField fx:id="pesquisaText" layoutX="-200.0" layoutY="-6.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+               <children>
+                  <Button layoutX="69.0" mnemonicParsing="false" onAction="#onPesquisarButtonClick" text="Pesquisar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </children>
+         <padding>
+            <Insets bottom="15.0" />
+         </padding>
+      </GridPane>
+      <TableView fx:id="tabela" maxWidth="480.0" prefHeight="200.0" prefWidth="574.0">
+        <columns>
+          <TableColumn fx:id="colNome" minWidth="50.0" prefWidth="120.0" text="Nome do Produto" />
+            <TableColumn fx:id="colClasse" minWidth="50.0" prefWidth="120.0" text="Classificação" />
+            <TableColumn fx:id="colValor" minWidth="50.0" prefWidth="120.0" text="Preço" />
+            <TableColumn fx:id="colQuantidade" minWidth="50.0" prefWidth="120.0" text="Quantidade" />
+        </columns>
+      </TableView>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="removerButton" mnemonicParsing="false" onAction="#onRemoverButtonClick" text="Remover Produto do Estoque" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <Button fx:id="adicionarButton" mnemonicParsing="false" onAction="#onAdicionarButtonClick" text="Adicionar um Novo Produto" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+               <children>
+                  <Button fx:id="alterarButton" mnemonicParsing="false" onAction="#onAlterarButtonClick" text="Alterar Dados do Produto" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </children>
+         <padding>
+            <Insets top="15.0" />
+         </padding>
+      </GridPane>
+      <GridPane alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="voltarButton" layoutX="112.0" layoutY="3.0" mnemonicParsing="false" onAction="#onVoltarButtonClick" text="Voltar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
+               </children>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <Button fx:id="logoutButton" layoutX="112.0" layoutY="1.0" mnemonicParsing="false" onAction="#onLogoutButtonClick" text="Logout" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </children>
+         <padding>
+            <Insets top="15.0" />
+         </padding>
+      </GridPane>
+   </children>
+</VBox>
