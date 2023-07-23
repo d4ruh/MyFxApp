@@ -14,8 +14,8 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 
 public class Controller {
     @FXML private Parent root;
@@ -62,27 +62,28 @@ public class Controller {
         DatabaseHandler connect = new DatabaseHandler();
         Connection conDB = connect.getConnection();
 
-        String verifyLogin = "select count(1) from registro_vendedor where username = '" + usernameText.getText() + "' and password = '" + passwordText.getText() + "';";
+        String selectString = "select count(1) from registro_vendedor where username = ? and password = ?";
 
         try {
-            Statement stmt = conDB.createStatement();
-            ResultSet rs = stmt.executeQuery(verifyLogin);
+            PreparedStatement selectUser = conDB.prepareStatement(selectString);
+            conDB.setAutoCommit(false);
 
-            while (rs.next()) {
-                if (rs.getInt(1) == 1) {
-                    Data.userLogedIn = usernameText.getText();
-                    changeScene("menu01.fxml", "Menu Principal",(Stage) loginButton.getScene().getWindow());
-                    conDB.close();
-                    return;
-                }
-                else {
-                    loginText.setText("dados invalidos, digite novamente");
-                    usernameText.setText("");
-                    passwordText.setText("");
-                    conDB.close();
-                    return;
-                }
+            selectUser.setString(1, usernameText.getText());
+            selectUser.setString(2, passwordText.getText());
+
+            ResultSet rs = selectUser.executeQuery();
+
+            rs.next();
+            if (rs.getInt(1) == 1) {
+                Data.userLogedIn = usernameText.getText();
+                changeScene("menu01.fxml", "Menu Principal",(Stage) loginButton.getScene().getWindow());
+            } else {
+                loginText.setText("dados invalidos, digite novamente");
+                usernameText.setText("");
+                passwordText.setText("");
             }
+
+            conDB.close();
         }
         catch (Exception e) {
             System.out.println(e.getMessage());

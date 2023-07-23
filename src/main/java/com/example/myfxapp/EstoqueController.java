@@ -8,9 +8,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class EstoqueController implements Initializable {
@@ -89,31 +87,38 @@ public class EstoqueController implements Initializable {
 
         DatabaseHandler connect = new DatabaseHandler();
         Connection conDB = connect.getConnection();
-        String getData;
-        if (modoBusca.equals("valor")) {
-            getData = "select nome, classe, quantidade, valor from registro_estoque_produtos where " + modoBusca + " <= " + Double.parseDouble(pesquisaText.getText()) + ";";
-        }
-        else {
-            getData = "select nome, classe, quantidade, valor from registro_estoque_produtos where " + modoBusca + " like '%" + pesquisaText.getText() + "%';";
-        }
+
+        String operacao;
+        if (modoBusca == "valor")
+            operacao = modoBusca + " <= ?";
+        else
+            operacao = modoBusca + " like ?";
+
+        String getData = "select nome, classe, quantidade, valor from registro_estoque_produtos where " + operacao;
 
         try {
-            Statement stmt = conDB.createStatement();
-            ResultSet rs = stmt.executeQuery(getData);
+            PreparedStatement selectDados = conDB.prepareStatement(getData);
+
+            if (modoBusca == "valor")   selectDados.setDouble(1, Double.parseDouble(pesquisaText.getText()));
+            else                        selectDados.setString(1, "%" + pesquisaText.getText() + "%");
+
+            ResultSet rs = selectDados.executeQuery();
 
             ObservableList<Produto> listaProdutos = tabela.getItems();
             listaProdutos.clear();
 
             while (rs.next()) {
                 Produto produto = new Produto( rs.getString(1), rs.getString(2),
-                                                rs.getInt(3), +rs.getDouble(4));
+                        rs.getInt(3), +rs.getDouble(4));
 
                 listaProdutos.add(produto);
             }
 
             tabela.setItems(listaProdutos);
+
+            conDB.close();
         }
-        catch (Exception e) {
+        catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -135,11 +140,12 @@ public class EstoqueController implements Initializable {
         DatabaseHandler connect = new DatabaseHandler();
         Connection conDB = connect.getConnection();
 
-        String deletarProduto = "delete from registro_estoque_produtos where nome = '" + data + "';";
+        String deletarProduto = "delete from registro_estoque_produtos where nome = ?";
 
         try {
-            Statement stmt=conDB.createStatement();
-            stmt.executeUpdate(deletarProduto);
+            PreparedStatement stmt = conDB.prepareStatement(deletarProduto);
+            stmt.setString(1, data);
+            stmt.executeUpdate();
 
             conDB.close();
 
@@ -168,7 +174,6 @@ public class EstoqueController implements Initializable {
 
         new Controller().changeScene("registroProduto.fxml", "WoodPecker Furniture - Dados de Produto", (Stage) alterarButton.getScene().getWindow());
     }
-
 
     @FXML
     protected void onVoltarButtonClick() {

@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
@@ -58,23 +59,35 @@ public class registroProdutoController implements Initializable {
 
     @FXML
     protected void onConfirmarButtonClick() {
-
         DatabaseHandler connect = new DatabaseHandler();
         Connection conDB = connect.getConnection();
 
         String getData;
-
-        if (Data.produtoSelecionado == null) {
-            getData = "insert into registro_estoque_produtos ( nome, classe, quantidade, valor ) values ( '" + nomeText.getText() + "', '" + classeText.getText() + "', " + Integer.parseInt(quantText.getText()) + ", " + Double.parseDouble(valorText.getText()) + " );";
-        }
-        else {
-            getData = "update registro_estoque_produtos set classe='" + classeText.getText() + "', quantidade=" + Integer.parseInt(quantText.getText()) + ", valor=" + Double.parseDouble(valorText.getText()) + " where  nome='" + Data.produtoSelecionado + "';";
-        }
-
         try {
-            Statement stmt = conDB.createStatement();
-            stmt.executeUpdate(getData);
+            if (Data.produtoSelecionado == null) {
+                getData = "insert into registro_estoque_produtos ( nome, classe, quantidade, valor ) values ( ?, ?, ?, ? )";
 
+                PreparedStatement stmt = conDB.prepareStatement(getData);
+
+                stmt.setString(1, nomeText.getText());
+                stmt.setString(2, classeText.getText());
+                stmt.setInt(3, Integer.parseInt(quantText.getText()));
+                stmt.setDouble(4, Double.parseDouble(valorText.getText()));
+
+                stmt.executeUpdate();
+            }
+            else {
+                getData = "update registro_estoque_produtos set classe = ?, quantidade = ?, valor = ? where  nome = ? ";
+
+                PreparedStatement stmt = conDB.prepareStatement(getData);
+
+                stmt.setString(1, classeText.getText());
+                stmt.setInt(2, Integer.parseInt(quantText.getText()));
+                stmt.setDouble(3, Double.parseDouble(valorText.getText()));
+                stmt.setString(4, Data.produtoSelecionado);
+
+                stmt.executeUpdate();
+            }
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
