@@ -47,7 +47,7 @@ public class Menu01Controller implements Initializable{
 
     @FXML
     protected void onRegistrarVendaButtonClick() {
-        new Controller().changeScene("consultarVendas.fxml", "Cadastrar Cliente", (Stage) registrarClienteButton.getScene().getWindow());
+        new Controller().changeScene("consultarVendas.fxml", "Consultar Vendas", (Stage) registrarClienteButton.getScene().getWindow());
     }
 
     @FXML

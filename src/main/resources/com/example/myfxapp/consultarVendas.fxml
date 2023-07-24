@@ -56,10 +56,11 @@
       <TableView fx:id="tabela" maxWidth="480.0" prefHeight="200.0" prefWidth="574.0">
          <columns>
             <TableColumn fx:id="nomeProdutoCol" prefWidth="125.0" text="Nome do Produto" />
+            <TableColumn fx:id="dataCol" prefWidth="100.0" text="Data da Compra" />
             <TableColumn fx:id="cpfClienteCol" prefWidth="115.0" text="CPF do Cliente" />
             <TableColumn fx:id="cpfVendedorCol" prefWidth="115.0" text="CPF do Vendedor" />
             <TableColumn fx:id="valorCol" prefWidth="115.0" text="Preço do Produto" />
-            <TableColumn fx:id="quantCol" prefWidth="150.0" text="Quantidade Comprada" />
+            <TableColumn fx:id="quantCol" prefWidth="100.0" text="Quantidade" />
             <TableColumn fx:id="valorTotalCol" prefWidth="100.0" text="Valor Total" />
          </columns>
          <VBox.margin>
@@ -70,7 +71,6 @@
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
          </columnConstraints>
          <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -78,15 +78,10 @@
          <children>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onEfetivarVendaButtonClick" text="Efetivar Nova Venda" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
-               </children>
-            </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
-               <children>
                   <Button fx:id="voltarButton" layoutX="-39.0" layoutY="10.0" mnemonicParsing="false" onAction="#onVoltarButtonClick" text="Voltar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                <children>
                   <Button layoutX="-40.0" layoutY="3.0" mnemonicParsing="false" onAction="#onLogoutButtonClick" text="Logout" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
                </children>

@@ -124,19 +124,45 @@ public class EstoqueController implements Initializable {
     }
 
     @FXML
+    protected void onEfetivarVendaButtonClick() {
+        if (!checkIfSelected(tabela))
+            return;
+
+        Data.produtoSelecionado = getProductName();
+
+        new Controller().changeScene("registrarVenda.fxml", "WoodPecker Furniture - Dados de Venda", (Stage) logoutButton.getScene().getWindow());
+    }
+
+    protected boolean checkIfSelected(TableView tb) {
+        if (tb.getSelectionModel().isEmpty()) {
+            System.out.println("item não selecionado");
+            return false;
+        }
+
+        return true;
+    }
+
+    @FXML
     protected void onLogoutButtonClick() {
         new Controller().changeScene("login.fxml", "WoodPecker Furniture - login",(Stage) logoutButton.getScene().getWindow());
         Data.userLogedIn = null;
     }
 
-    @FXML
-    protected void onRemoverButtonClick() {
+    private String getProductName() {
         TablePosition pos = tabela.getSelectionModel().getSelectedCells().get(0);
         int row = pos.getRow();
 
         Produto item = tabela.getItems().get(row);
-        String data = colNome.getCellObservableValue(item).getValue().toString();
-//
+        return colNome.getCellObservableValue(item).getValue().toString();
+    }
+
+    @FXML
+    protected void onRemoverButtonClick() {
+        if (!checkIfSelected(tabela))
+            return;
+
+        String data = getProductName();
+
         DatabaseHandler connect = new DatabaseHandler();
         Connection conDB = connect.getConnection();
 
@@ -164,19 +190,16 @@ public class EstoqueController implements Initializable {
 
     @FXML
     protected void onAlterarButtonClick() {
-        TablePosition pos = tabela.getSelectionModel().getSelectedCells().get(0);
-        int row = pos.getRow();
+        if (!checkIfSelected(tabela))
+            return;
 
-        Produto item = tabela.getItems().get(row);
-        String data = colNome.getCellObservableValue(item).getValue().toString();
-
-        Data.produtoSelecionado = data;
+        Data.produtoSelecionado = getProductName();
 
         new Controller().changeScene("registroProduto.fxml", "WoodPecker Furniture - Dados de Produto", (Stage) alterarButton.getScene().getWindow());
     }
 
     @FXML
     protected void onVoltarButtonClick() {
-        new Controller().changeScene("menu01.fxml", "WoodPecker Furniture - Estoque",(Stage) voltarButton.getScene().getWindow());
+        new Controller().changeScene("menu01.fxml", "WoodPecker Furniture - Menu",(Stage) voltarButton.getScene().getWindow());
     }
 }

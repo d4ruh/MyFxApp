@@ -31,14 +31,14 @@
                   <Button fx:id="consultarEstoqueButton" mnemonicParsing="false" onAction="#onConsultarEstoqueButtonClick" text="Consultar Estoque" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <children>
-                  <Button fx:id="registrarVendaButton" layoutX="34.0" layoutY="1.0" mnemonicParsing="false" onAction="#onRegistrarVendaButtonClick" text="Registrar Venda" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0" />
-               </children>
-            </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                <children>
-                  <Button fx:id="registrarClienteButton" layoutX="-18.0" layoutY="1.0" mnemonicParsing="false" onAction="#onRegistrarClienteButtonClick" text="Registrar Cliente" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button fx:id="registrarVendaButton" mnemonicParsing="false" onAction="#onRegistrarVendaButtonClick" text="Consultar Vendas" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Button fx:id="registrarClienteButton" mnemonicParsing="false" onAction="#onRegistrarClienteButtonClick" text="Registrar Cliente" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">

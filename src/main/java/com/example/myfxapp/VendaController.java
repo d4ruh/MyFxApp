@@ -13,6 +13,7 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class VendaController implements Initializable {
@@ -20,6 +21,7 @@ public class VendaController implements Initializable {
 
     @FXML private TableView<Venda> tabela;
     @FXML private TableColumn<Venda, String> nomeProdutoCol;
+    @FXML private TableColumn<Venda, Date> dataCol;
     @FXML private TableColumn<Venda, String> cpfClienteCol;
     @FXML private TableColumn<Venda, String> cpfVendedorCol;
     @FXML private TableColumn<Venda, Double> valorCol;
@@ -29,6 +31,7 @@ public class VendaController implements Initializable {
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
         nomeProdutoCol.setCellValueFactory(new PropertyValueFactory<Venda, String>("nomeProduto"));
+        dataCol.setCellValueFactory(new PropertyValueFactory<Venda, Date>("dataVenda"));
         cpfClienteCol.setCellValueFactory(new PropertyValueFactory<Venda, String>("cpfCliente"));
         cpfVendedorCol.setCellValueFactory(new PropertyValueFactory<Venda, String>("cpfVendedor"));
         valorCol.setCellValueFactory(new PropertyValueFactory<Venda, Double>("valorProduto"));
@@ -53,7 +56,7 @@ public class VendaController implements Initializable {
         Connection conDB = connect.getConnection();
         String getData;
 
-        getData = "select id_produto, id_cliente, id_vendedor, quantidade, valor_total from registro_venda;";
+        getData = "select id_produto, id_cliente, id_vendedor, quantidade, valor_total, data from registro_venda;";
 
         try {
             Statement stmt = conDB.createStatement();
@@ -67,7 +70,7 @@ public class VendaController implements Initializable {
                 Integer quant = rs.getInt(4);
 
                 Venda venda = new Venda( rs.getString(1), rs.getString(2),
-                        rs.getString(3), (valorTotal/quant), quant, valorTotal);
+                        rs.getString(3), (valorTotal/quant), quant, valorTotal, rs.getDate(6));
 
                 listaProdutos.add(venda);
             }
@@ -81,11 +84,6 @@ public class VendaController implements Initializable {
 
     @FXML
     protected void onPesquisarButtonClick() {
-
-    }
-
-    @FXML
-    protected void onEfetivarVendaButtonClick() {
 
     }
 

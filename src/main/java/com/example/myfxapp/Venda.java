@@ -1,5 +1,7 @@
 package com.example.myfxapp;
 
+import java.util.Date;
+
 public class Venda {
     private String nomeProduto;
     private String cpfCliente;
@@ -7,14 +9,16 @@ public class Venda {
     private Double valorProduto;
     private Integer quantidade;
     private Double valorTotal;
+    private Date dataVenda;
 
-    public Venda(String nomeProduto, String cpfCliente, String cpfVendedor, Double valorProduto, Integer quantidade, Double valorTotal) {
+    public Venda(String nomeProduto, String cpfCliente, String cpfVendedor, Double valorProduto, Integer quantidade, Double valorTotal, Date dataVenda) {
         this.nomeProduto = nomeProduto;
         this.cpfCliente = cpfCliente;
         this.cpfVendedor = cpfVendedor;
         this.valorProduto = valorProduto;
         this.quantidade = quantidade;
         this.valorTotal = valorTotal;
+        this.dataVenda = dataVenda;
     }
 
     public String getNomeProduto() {
@@ -39,5 +43,9 @@ public class Venda {
 
     public Double getValorTotal() {
         return valorTotal;
+    }
+
+    public Date getDataVenda() {
+        return dataVenda;
     }
 }
