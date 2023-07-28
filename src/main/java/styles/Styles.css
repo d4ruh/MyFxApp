@@ -1,0 +1,36 @@
+.login{
+    -fx-background-image: url('../imagens/imgs/login.png');
+    -fx-background-color: black;
+}
+.consultarEstoque{
+        -fx-background-image: url("C:\javafx-sdk-20.0.1\MyFxApp\src\main\java\com\example\myfxapp\imagens\imgs\estoque.png");
+        -fx-background-size: 100% 100%;
+}
+.consultarVendas{
+            -fx-background-image: url("C:\javafx-sdk-20.0.1\MyFxApp\src\main\java\com\example\myfxapp\imagens\imgs\areaVendedor.png");
+            -fx-background-size: 100% 100%;
+}
+.menu{
+        -fx-background-image: url("C:\javafx-sdk-20.0.1\MyFxApp\src\main\java\com\example\myfxapp\imagens\imgs\inicial.png");
+        -fx-background-size: 100% 100%;
+}
+.profile{
+        -fx-background-image: url("C:\javafx-sdk-20.0.1\MyFxApp\src\main\java\com\example\myfxapp\imagens\imgs\profile.png");
+        -fx-background-size: 100% 100%;
+}
+.registrarVenda{
+        -fx-background-image: url("C:\javafx-sdk-20.0.1\MyFxApp\src\main\java\com\example\myfxapp\imagens\imgs\efetivarVendas.png");
+        -fx-background-size: 100% 100%;
+}
+.registrarProduto{
+        -fx-background-image: url("C:\javafx-sdk-20.0.1\MyFxApp\src\main\java\com\example\myfxapp\imagens\imgs\atualizarEstoque.png");
+        -fx-background-size: 100% 100%;
+}
+.registrarUsuario{
+        -fx-background-image: url("C:\javafx-sdk-20.0.1\MyFxApp\src\main\java\com\example\myfxapp\imagens\imgs\estoque.png");
+        -fx-background-size: 100% 100%;
+}
+.renovarSenha{
+        -fx-background-image: url("C:\javafx-sdk-20.0.1\MyFxApp\src\main\java\com\example\myfxapp\imagens\imgs\estoque.png");
+        -fx-background-size: 100% 100%;
+}
