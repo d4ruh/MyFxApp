@@ -36,7 +36,7 @@
                         <Insets />
                     </GridPane.margin>
                 </Label>
-                <TextField fx:id="nomeProdutoText" editable="false" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <TextField fx:id="nomeProdutoText" editable="false" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="196.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                     <GridPane.margin>
                         <Insets right="20.0" />
                     </GridPane.margin>
@@ -51,7 +51,7 @@
                         <Insets />
                     </GridPane.margin>
                 </TextField>
-                <TextField fx:id="quantidadeText" prefHeight="25.0" prefWidth="159.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <TextField fx:id="quantidadeText" prefHeight="25.0" prefWidth="131.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <GridPane.margin>
                         <Insets />
                     </GridPane.margin>
@@ -72,14 +72,11 @@
             <children>
                 <AnchorPane prefHeight="200.0" prefWidth="200.0">
                     <children>
-                        <Button fx:id="cancelarButton" layoutX="-13.0" layoutY="9.0" mnemonicParsing="false" onAction="#onCancelarButtonClick" prefHeight="25.0" prefWidth="245.0" text="Cancelar" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="-13.0" AnchorPane.rightAnchor="110.0" AnchorPane.topAnchor="9.0" />
+                        <Button fx:id="cancelarButton" layoutX="-13.0" layoutY="9.0" mnemonicParsing="false" onAction="#onCancelarButtonClick" prefHeight="25.0" prefWidth="182.0" text="Cancelar" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="-13.0" AnchorPane.rightAnchor="173.0" AnchorPane.topAnchor="9.0" />
+                        <Button fx:id="confirmarButton" layoutX="-13.0" layoutY="9.0" mnemonicParsing="false" onAction="#onConfirmarButtonClick" prefHeight="25.0" prefWidth="189.0" text="Confirmar" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="216.0" AnchorPane.rightAnchor="-43.0" AnchorPane.topAnchor="9.0" />
                     </children>
                 </AnchorPane>
-                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
-                    <children>
-                        <Button fx:id="confirmarButton" layoutX="-94.0" layoutY="7.0" mnemonicParsing="false" onAction="#onConfirmarButtonClick" prefHeight="25.0" prefWidth="245.0" text="Confirmar" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="-33.0" AnchorPane.rightAnchor="110.0" AnchorPane.topAnchor="7.0" />
-                    </children>
-                </AnchorPane>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
             </children>
             <VBox.margin>
                 <Insets left="25.0" right="25.0" />

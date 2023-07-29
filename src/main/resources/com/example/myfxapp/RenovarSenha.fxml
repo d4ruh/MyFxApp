@@ -9,17 +9,22 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="647.0" styleClass="renovarSenha" stylesheets="@../../../../java/styles/Styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myfxapp.EsqueciSenhaController">
+<VBox alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="647.0" styleClass="renovarSenha" stylesheets="@../../../../java/styles/Styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myfxapp.EsqueciSenhaController">
    <children>
-      <Label fx:id="labelEsqueciSenha" text="Informe seu email para que possamos enviar um código de recuperação" />
-      <GridPane>
+      <Label fx:id="labelEsqueciSenha" text="Informe seu email para que possamos enviar um código de recuperação.">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <GridPane prefHeight="43.0" prefWidth="647.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Label prefHeight="17.0" prefWidth="243.0" text="Insira o seu Email:">
@@ -27,39 +32,21 @@
                   <Insets left="50.0" />
                </GridPane.margin>
             </Label>
-            <TextField fx:id="emailRecuperacaoTextField" GridPane.columnIndex="1" />
+            <TextField fx:id="emailRecuperacaoTextField" alignment="BOTTOM_CENTER" prefHeight="25.0" prefWidth="373.0" GridPane.columnIndex="1" />
+            <Label prefHeight="17.0" prefWidth="243.0" text="Insira o codigo enviado:" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="50.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="codigoRecuperacaoTextField" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="420.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
          <VBox.margin>
             <Insets bottom="25.0" top="25.0" />
          </VBox.margin>
       </GridPane>
-      <GridPane>
-         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-         </rowConstraints>
+      <AnchorPane prefHeight="107.0" prefWidth="647.0">
          <children>
-            <Label prefHeight="17.0" prefWidth="243.0" text="Insira o codigo enviado:">
-               <GridPane.margin>
-                  <Insets left="50.0" />
-               </GridPane.margin>
-            </Label>
-            <TextField fx:id="codigoRecuperacaoTextField" GridPane.columnIndex="1">
-               <GridPane.margin>
-                  <Insets right="50.0" />
-               </GridPane.margin>
-            </TextField>
-         </children>
-         <VBox.margin>
-            <Insets top="25.0" />
-         </VBox.margin>
-      </GridPane>
-      <AnchorPane prefHeight="81.0" prefWidth="647.0">
-         <children>
-            <Button fx:id="enviarCodigoButton" alignment="CENTER" layoutX="209.0" layoutY="2.0" mnemonicParsing="false" onAction="#onEnviarCodigoButtonClick" text="Enviar Código de Recuperação" />
+            <Button fx:id="enviarCodigoButton" alignment="CENTER" layoutX="228.0" layoutY="2.0" mnemonicParsing="false" onAction="#onEnviarCodigoButtonClick" prefHeight="25.0" prefWidth="178.0" text="Enviar Código de Recuperação" />
             <Button fx:id="validarButton" layoutX="62.0" layoutY="46.0" mnemonicParsing="false" onAction="#onValidarButtonClick" prefHeight="17.0" prefWidth="218.0" text="Validar Código" />
             <Button fx:id="voltarButton" layoutX="345.0" layoutY="46.0" mnemonicParsing="false" onAction="#onVoltarButtonClick" prefHeight="25.0" prefWidth="227.0" text="Voltar" />
          </children>

@@ -12,36 +12,36 @@
 
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="registrarProduto" stylesheets="@../../../../java/styles/Styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myfxapp.registroProdutoController">
    <children>
-      <GridPane minWidth="-Infinity" prefHeight="176.0" prefWidth="549.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="101.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="449.0" minWidth="10.0" prefWidth="449.0" />
-        </columnConstraints>
-        <rowConstraints>
+      <GridPane minWidth="-Infinity" prefHeight="175.0" prefWidth="455.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="117.0" minWidth="10.0" prefWidth="117.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="5.0" prefWidth="133.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
          <children>
-            <Label text="Nome:" GridPane.rowIndex="2" />
-            <Label text="Classificação:" GridPane.rowIndex="3" />
-            <Label prefHeight="17.0" prefWidth="35.0" text="Valor:">
+            <Label prefHeight="17.0" prefWidth="70.0" text="      Nome:" GridPane.rowIndex="2" />
+            <Label prefHeight="17.0" prefWidth="100.0" text="      Classificação:" GridPane.rowIndex="3" />
+            <Label prefHeight="17.0" prefWidth="70.0" text="Valor:">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
             </Label>
-            <Label text="Quantidade:" GridPane.rowIndex="1">
+            <Label prefHeight="17.0" prefWidth="70.0" text="Quantidade:" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
             </Label>
-            <TextField fx:id="nomeText" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <TextField fx:id="nomeText" editable="false" prefHeight="25.0" prefWidth="30.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets right="20.0" />
                </GridPane.margin>
             </TextField>
-            <TextField fx:id="classeText" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <TextField fx:id="classeText" prefHeight="25.0" prefWidth="144.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets right="20.0" />
                </GridPane.margin>
@@ -72,12 +72,12 @@
          <children>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="cancelarButton" layoutX="59.0" layoutY="4.0" mnemonicParsing="false" onAction="#onCancelarButtonClick" text="Cancelar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
+                  <Button fx:id="cancelarButton" layoutX="10.0" layoutY="15.0" mnemonicParsing="false" onAction="#onCancelarButtonClick" text="Cancelar" AnchorPane.bottomAnchor="-15.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                <children>
-                  <Button fx:id="confirmarButton" layoutX="59.0" layoutY="4.0" mnemonicParsing="false" onAction="#onConfirmarButtonClick" text="Confirmar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
+                  <Button fx:id="confirmarButton" layoutX="10.0" layoutY="15.0" mnemonicParsing="false" onAction="#onConfirmarButtonClick" text="Confirmar" AnchorPane.bottomAnchor="-15.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0" />
                </children>
             </AnchorPane>
          </children>
