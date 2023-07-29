@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="consultarVendas" stylesheets="@../../../../java/styles/Styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myfxapp.VendaController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="true" prefHeight="528.0" prefWidth="737.0" styleClass="consultarVendas" stylesheets="@../../../../java/styles/Styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myfxapp.VendaController">
    <children>
       <GridPane>
          <columnConstraints>
@@ -27,7 +27,7 @@
          <children>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <MenuButton layoutX="33.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0" text="Buscar Via" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                  <MenuButton layoutX="35.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="122.0" text="Buscar Via" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="-1.0">
                      <items>
                         <MenuItem mnemonicParsing="false" text="CPF do Vendedor" />
                         <MenuItem mnemonicParsing="false" text="CPF do Cliente" />
@@ -43,25 +43,25 @@
             </AnchorPane>
             <AnchorPane prefHeight="30.0" prefWidth="278.0" GridPane.columnIndex="1">
                <children>
-                  <TextField fx:id="pesquisaText" layoutX="-200.0" layoutY="-6.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <TextField fx:id="pesquisaText" layoutX="-28.0" layoutY="-1.0" prefHeight="30.0" prefWidth="367.0" visible="false" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="-28.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="-1.0" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
                <children>
-                  <Button layoutX="69.0" mnemonicParsing="false" onAction="#onPesquisarButtonClick" text="Pesquisar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
+                  <Button layoutX="-17.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onPesquisarButtonClick" opacity="0.21" prefHeight="30.0" prefWidth="38.0" text="Pesquisar" visible="false" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="-17.0" AnchorPane.rightAnchor="170.0" AnchorPane.topAnchor="-1.0" />
                </children>
             </AnchorPane>
          </children>
       </GridPane>
-      <TableView fx:id="tabela" maxWidth="480.0" prefHeight="200.0" prefWidth="574.0">
+      <TableView fx:id="tabela" maxWidth="755.0" prefHeight="203.0" prefWidth="349.0">
          <columns>
-            <TableColumn fx:id="nomeProdutoCol" prefWidth="125.0" text="Nome do Produto" />
-            <TableColumn fx:id="dataCol" prefWidth="100.0" text="Data da Compra" />
-            <TableColumn fx:id="cpfClienteCol" prefWidth="115.0" text="CPF do Cliente" />
-            <TableColumn fx:id="cpfVendedorCol" prefWidth="115.0" text="CPF do Vendedor" />
-            <TableColumn fx:id="valorCol" prefWidth="115.0" text="Preço do Produto" />
-            <TableColumn fx:id="quantCol" prefWidth="100.0" text="Quantidade" />
-            <TableColumn fx:id="valorTotalCol" prefWidth="100.0" text="Valor Total" />
+            <TableColumn fx:id="nomeProdutoCol" prefWidth="113.0" text="Nome do Produto" />
+            <TableColumn fx:id="dataCol" prefWidth="104.0" text="Data da Compra" />
+            <TableColumn fx:id="cpfClienteCol" prefWidth="94.0" text="CPF do Cliente" />
+            <TableColumn fx:id="cpfVendedorCol" prefWidth="106.0" text="CPF do Vendedor" />
+            <TableColumn fx:id="valorCol" prefWidth="120.0" text="Preço do Produto" />
+            <TableColumn fx:id="quantCol" prefWidth="97.0" text="Quantidade" />
+            <TableColumn fx:id="valorTotalCol" prefWidth="101.0" text="Valor Total" />
          </columns>
          <VBox.margin>
             <Insets bottom="25.0" top="25.0" />

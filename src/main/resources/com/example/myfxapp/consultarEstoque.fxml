@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="consultarEstoque" stylesheets="@../../../../java/styles/Styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myfxapp.EstoqueController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="734.0" styleClass="consultarEstoque" stylesheets="@../../../../java/styles/Styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myfxapp.EstoqueController">
    <children>
       <GridPane>
         <columnConstraints>
@@ -27,7 +27,7 @@
          <children>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <MenuButton layoutX="33.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0" text="Buscar Via" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                  <MenuButton layoutX="10.0" layoutY="15.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0" text="Buscar Via" AnchorPane.bottomAnchor="-15.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
                     <items>
                       <MenuItem fx:id="nomeOption" mnemonicParsing="false" text="Nome" />
                       <MenuItem fx:id="classeOption" mnemonicParsing="false" text="Classificação" />
@@ -38,12 +38,12 @@
             </AnchorPane>
             <AnchorPane prefHeight="30.0" prefWidth="278.0" GridPane.columnIndex="1">
                <children>
-                  <TextField fx:id="pesquisaText" layoutX="-200.0" layoutY="-6.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <TextField fx:id="pesquisaText" layoutY="15.0" AnchorPane.bottomAnchor="-15.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
                <children>
-                  <Button layoutX="69.0" mnemonicParsing="false" onAction="#onPesquisarButtonClick" text="Pesquisar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
+                  <Button layoutX="10.0" layoutY="15.0" mnemonicParsing="false" onAction="#onPesquisarButtonClick" text="Pesquisar" AnchorPane.bottomAnchor="-15.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0" />
                </children>
             </AnchorPane>
          </children>
@@ -54,12 +54,12 @@
             <Insets />
          </VBox.margin>
       </GridPane>
-      <TableView fx:id="tabela" maxWidth="-Infinity" prefHeight="200.0" prefWidth="480.0">
+      <TableView fx:id="tabela" maxWidth="-Infinity" prefHeight="142.0" prefWidth="434.0">
         <columns>
-          <TableColumn fx:id="colNome" minWidth="50.0" prefWidth="120.0" text="Nome do Produto" />
-            <TableColumn fx:id="colClasse" minWidth="50.0" prefWidth="120.0" text="Classificação" />
-            <TableColumn fx:id="colValor" minWidth="50.0" prefWidth="120.0" text="Preço" />
-            <TableColumn fx:id="colQuantidade" minWidth="50.0" prefWidth="120.0" text="Quantidade" />
+          <TableColumn fx:id="colNome" minWidth="50.0" prefWidth="111.0" text="Nome do Produto" />
+            <TableColumn fx:id="colClasse" minWidth="50.0" prefWidth="106.0" text="Classificação" />
+            <TableColumn fx:id="colValor" minWidth="50.0" prefWidth="86.0" text="Preço" />
+            <TableColumn fx:id="colQuantidade" minWidth="50.0" prefWidth="132.0" text="Quantidade" />
         </columns>
       </TableView>
       <GridPane>
@@ -71,14 +71,14 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+            <AnchorPane prefHeight="0.0" prefWidth="347.0">
                <children>
-                  <Button fx:id="removerButton" mnemonicParsing="false" onAction="#onRemoverButtonClick" text="Remover Produto do Estoque" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
+                  <Button fx:id="removerButton" layoutX="95.0" layoutY="9.0" mnemonicParsing="false" onAction="#onRemoverButtonClick" prefHeight="25.0" prefWidth="250.0" text="Remover Produto do Estoque" AnchorPane.bottomAnchor="-13.0" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="33.0" AnchorPane.topAnchor="33.0" />
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+            <AnchorPane prefHeight="6.0" prefWidth="347.0" GridPane.columnIndex="1">
                <children>
-                  <Button fx:id="adicionarButton" mnemonicParsing="false" onAction="#onAdicionarButtonClick" text="Adicionar um Novo Produto" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
+                  <Button fx:id="adicionarButton" layoutX="14.0" layoutY="18.0" mnemonicParsing="false" onAction="#onAdicionarButtonClick" prefHeight="25.0" prefWidth="250.0" text="Adicionar um Novo Produto" AnchorPane.bottomAnchor="-13.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="64.0" AnchorPane.topAnchor="33.0" />
                </children>
             </AnchorPane>
          </children>
@@ -86,7 +86,7 @@
             <Insets top="15.0" />
          </padding>
       </GridPane>
-      <GridPane>
+      <GridPane prefHeight="37.0" prefWidth="650.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -100,20 +100,20 @@
          <children>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="alterarButton" layoutX="10.0" mnemonicParsing="false" onAction="#onAlterarButtonClick" text="Alterar Dados do Produto" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
+                  <Button fx:id="alterarButton" layoutX="63.0" layoutY="19.0" mnemonicParsing="false" onAction="#onAlterarButtonClick" prefHeight="25.0" prefWidth="250.0" text="Alterar Dados do Produto" AnchorPane.bottomAnchor="-13.0" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="33.0" AnchorPane.topAnchor="13.0" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                <children>
-                  <Button fx:id="efetivarVendaButton" layoutX="10.0" layoutY="-1.0" mnemonicParsing="false" onAction="#onEfetivarVendaButtonClick" text="Efetivar Nova Venda" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
+                  <Button fx:id="efetivarVendaButton" layoutX="13.0" layoutY="13.0" mnemonicParsing="false" onAction="#onEfetivarVendaButtonClick" prefHeight="25.0" prefWidth="250.0" text="Efetivar Nova Venda" AnchorPane.bottomAnchor="-13.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="64.0" AnchorPane.topAnchor="13.0" />
                </children>
             </AnchorPane>
          </children>
       </GridPane>
-      <GridPane alignment="CENTER">
+      <GridPane alignment="CENTER" prefHeight="35.0" prefWidth="694.0">
          <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="349.0" minWidth="10.0" prefWidth="346.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="350.0" minWidth="10.0" prefWidth="348.0" />
          </columnConstraints>
          <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -121,7 +121,7 @@
          <children>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="voltarButton" layoutX="112.0" layoutY="3.0" mnemonicParsing="false" onAction="#onVoltarButtonClick" text="Voltar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
+                  <Button fx:id="voltarButton" layoutX="64.0" layoutY="12.0" mnemonicParsing="false" onAction="#onVoltarButtonClick" prefHeight="25.0" prefWidth="250.0" text="Voltar" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="64.0" AnchorPane.rightAnchor="33.0" AnchorPane.topAnchor="13.0" />
                </children>
                <GridPane.margin>
                   <Insets />
@@ -129,7 +129,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                <children>
-                  <Button fx:id="logoutButton" layoutX="112.0" layoutY="1.0" mnemonicParsing="false" onAction="#onLogoutButtonClick" text="Logout" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
+                  <Button fx:id="logoutButton" layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#onLogoutButtonClick" prefHeight="25.0" prefWidth="250.0" text="Logout" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="33.0" AnchorPane.rightAnchor="64.0" AnchorPane.topAnchor="13.0" />
                </children>
             </AnchorPane>
          </children>

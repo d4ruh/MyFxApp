@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="renovarSenha" stylesheets="@../../../../java/styles/Styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myfxapp.EsqueciSenhaController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="647.0" styleClass="renovarSenha" stylesheets="@../../../../java/styles/Styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myfxapp.EsqueciSenhaController">
    <children>
       <Label fx:id="labelEsqueciSenha" text="Informe seu email para que possamos enviar um código de recuperação" />
       <GridPane>
@@ -27,21 +27,12 @@
                   <Insets left="50.0" />
                </GridPane.margin>
             </Label>
-            <TextField fx:id="emailRecuperacaoTextField" GridPane.columnIndex="1">
-               <GridPane.margin>
-                  <Insets right="50.0" />
-               </GridPane.margin>
-            </TextField>
+            <TextField fx:id="emailRecuperacaoTextField" GridPane.columnIndex="1" />
          </children>
          <VBox.margin>
             <Insets bottom="25.0" top="25.0" />
          </VBox.margin>
       </GridPane>
-      <Button fx:id="enviarCodigoButton" alignment="CENTER" mnemonicParsing="false" onAction="#onEnviarCodigoButtonClick" text="Enviar Código de Recuperação">
-         <VBox.margin>
-            <Insets top="25.0" />
-         </VBox.margin>
-      </Button>
       <GridPane>
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -66,10 +57,11 @@
             <Insets top="25.0" />
          </VBox.margin>
       </GridPane>
-      <AnchorPane prefHeight="124.0" prefWidth="570.0">
+      <AnchorPane prefHeight="81.0" prefWidth="647.0">
          <children>
-            <Button fx:id="validarButton" layoutX="21.0" layoutY="33.0" mnemonicParsing="false" onAction="#onValidarButtonClick" prefHeight="30.0" prefWidth="259.0" text="Validar Código" />
-            <Button fx:id="voltarButton" layoutX="315.0" layoutY="34.0" mnemonicParsing="false" onAction="#onVoltarButtonClick" prefHeight="30.0" prefWidth="259.0" text="Voltar" />
+            <Button fx:id="enviarCodigoButton" alignment="CENTER" layoutX="209.0" layoutY="2.0" mnemonicParsing="false" onAction="#onEnviarCodigoButtonClick" text="Enviar Código de Recuperação" />
+            <Button fx:id="validarButton" layoutX="62.0" layoutY="46.0" mnemonicParsing="false" onAction="#onValidarButtonClick" prefHeight="17.0" prefWidth="218.0" text="Validar Código" />
+            <Button fx:id="voltarButton" layoutX="345.0" layoutY="46.0" mnemonicParsing="false" onAction="#onVoltarButtonClick" prefHeight="25.0" prefWidth="227.0" text="Voltar" />
          </children>
          <VBox.margin>
             <Insets top="30.0" />
