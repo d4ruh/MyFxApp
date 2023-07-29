@@ -1,9 +1,9 @@
 .login{
-    -fx-background-image: url('../imagens/imgs/login.png');
-    -fx-background-color: black;
+    -fx-background-image: url("../com/example/myfxapp/imagens/login.png");
+    -fx-background-size: 100% 100%;
 }
 .consultarEstoque{
-        -fx-background-image: url("C:\javafx-sdk-20.0.1\MyFxApp\src\main\java\com\example\myfxapp\imagens\imgs\estoque.png");
+        -fx-background-image: url(../com/example/myfxapp/imagens/);
         -fx-background-size: 100% 100%;
 }
 .consultarVendas{
