@@ -17,10 +17,10 @@
          <font>
             <Font size="15.0" />
          </font></Label>
-      <GridPane prefHeight="43.0" prefWidth="647.0">
+      <GridPane prefHeight="55.0" prefWidth="654.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" minWidth="10.0" prefWidth="300.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -32,19 +32,19 @@
                   <Insets left="50.0" />
                </GridPane.margin>
             </Label>
-            <TextField fx:id="emailRecuperacaoTextField" alignment="BOTTOM_CENTER" prefHeight="25.0" prefWidth="373.0" GridPane.columnIndex="1" />
             <Label prefHeight="17.0" prefWidth="243.0" text="Insira o codigo enviado:" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="50.0" />
                </GridPane.margin>
             </Label>
             <TextField fx:id="codigoRecuperacaoTextField" alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="420.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="emailRecuperacaoTextField" alignment="CENTER" prefHeight="25.0" prefWidth="446.0" GridPane.columnIndex="1" />
          </children>
          <VBox.margin>
             <Insets bottom="25.0" top="25.0" />
          </VBox.margin>
       </GridPane>
-      <AnchorPane prefHeight="107.0" prefWidth="647.0">
+      <AnchorPane mouseTransparent="true" prefHeight="107.0" prefWidth="647.0">
          <children>
             <Button fx:id="enviarCodigoButton" alignment="CENTER" layoutX="228.0" layoutY="2.0" mnemonicParsing="false" onAction="#onEnviarCodigoButtonClick" prefHeight="25.0" prefWidth="178.0" text="Enviar Código de Recuperação" />
             <Button fx:id="validarButton" layoutX="62.0" layoutY="46.0" mnemonicParsing="false" onAction="#onValidarButtonClick" prefHeight="17.0" prefWidth="218.0" text="Validar Código" />

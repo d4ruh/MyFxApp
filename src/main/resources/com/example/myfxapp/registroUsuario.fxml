@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="734.0" styleClass="registrarUsuario" stylesheets="@../../../../java/styles/Styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myfxapp.RegistroUsuarioController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="527.0" prefWidth="735.0" styleClass="registrarUsuario" stylesheets="@../../../../java/styles/Styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myfxapp.RegistroUsuarioController">
    <children>
-      <GridPane alignment="CENTER" prefHeight="169.0" prefWidth="734.0">
+      <GridPane alignment="CENTER" prefHeight="187.0" prefWidth="735.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -46,14 +46,14 @@
                </font>
             </TextField>
             <TextField fx:id="enderecoTextField" promptText="Endereço" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <PasswordField fx:id="senhaTextField" prefHeight="11.0" prefWidth="335.0" promptText="Senha" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <PasswordField fx:id="senhaTextField" prefHeight="27.0" prefWidth="313.0" promptText="Senha" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <font>
                   <Font size="13.0" />
                </font>
             </PasswordField>
          </children>
       </GridPane>
-      <Button fx:id="confirmarDadosButton" mnemonicParsing="false" onAction="#confirmarDadosButtonOnCLick" prefHeight="25.0" prefWidth="366.0" text="Confirmar dados" />
-      <Button fx:id="voltarButton" mnemonicParsing="false" onAction="#voltarButtonOnClick" prefHeight="25.0" prefWidth="366.0" text="Voltar" />
+      <Button fx:id="confirmarDadosButton" alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#confirmarDadosButtonOnCLick" prefHeight="25.0" prefWidth="366.0" text="Confirmar dados" textAlignment="JUSTIFY" />
+      <Button fx:id="voltarButton" alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#voltarButtonOnClick" prefHeight="25.0" prefWidth="366.0" text="Voltar" />
    </children>
 </VBox>
