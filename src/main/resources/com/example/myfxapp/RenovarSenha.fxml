@@ -46,9 +46,9 @@
       </GridPane>
       <AnchorPane mouseTransparent="true" prefHeight="107.0" prefWidth="647.0">
          <children>
-            <Button fx:id="enviarCodigoButton" alignment="CENTER" layoutX="228.0" layoutY="2.0" mnemonicParsing="false" onAction="#onEnviarCodigoButtonClick" prefHeight="25.0" prefWidth="178.0" text="Enviar Código de Recuperação" />
-            <Button fx:id="validarButton" layoutX="62.0" layoutY="46.0" mnemonicParsing="false" onAction="#onValidarButtonClick" prefHeight="17.0" prefWidth="218.0" text="Validar Código" />
-            <Button fx:id="voltarButton" layoutX="345.0" layoutY="46.0" mnemonicParsing="false" onAction="#onVoltarButtonClick" prefHeight="25.0" prefWidth="227.0" text="Voltar" />
+            <Button fx:id="enviarCodigoButton" alignment="CENTER" layoutX="228.0" layoutY="2.0" mnemonicParsing="false" onAction="#onEnviarCodigoButtonClick" prefHeight="38.0" prefWidth="178.0" text="Enviar Código de Recuperação" />
+            <Button fx:id="validarButton" layoutX="62.0" layoutY="46.0" mnemonicParsing="false" onAction="#onValidarButtonClick" prefHeight="38.0" prefWidth="218.0" text="Validar Código" />
+            <Button fx:id="voltarButton" layoutX="345.0" layoutY="46.0" mnemonicParsing="false" onAction="#onVoltarButtonClick" prefHeight="38.0" prefWidth="227.0" text="Voltar" />
          </children>
          <VBox.margin>
             <Insets top="30.0" />

@@ -38,6 +38,7 @@ public class Controller {
             Image icon= new Image(new File("src/main/java/com/example/myfxapp/imagens/icon/Logo.png").toURI().toString());
             stage.setTitle(titulo);
             stage.getIcons().add(icon);
+            scene.getStylesheets().add(new File("src/main/java/styles/Styles.css").toURI().toString());
             stage.setScene(scene);
             stage.show();
             stageAnterior.close();

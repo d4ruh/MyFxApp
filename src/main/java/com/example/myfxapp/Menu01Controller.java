@@ -10,8 +10,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Menu01Controller implements Initializable{
-    @FXML
-    private Button logoutButton;
+   @FXML public Button registrarVendaButton;
+
+   @FXML private Button logoutButton;
     @FXML private Label bemVindoText;
     @FXML private Button consultarPerfilButton;
     @FXML private Button consultarEstoqueButton;
@@ -29,7 +30,6 @@ public class Menu01Controller implements Initializable{
         new Controller().changeScene("login.fxml","WoodPecker Furniture - login", (Stage) logoutButton.getScene().getWindow());
         Data.userLogedIn = null;
     }
-
     @FXML
     protected void onConsultarEstoqueButtonClick() {
         new Controller().changeScene("consultarEstoque.fxml","Consultar estoque",(Stage) consultarEstoqueButton.getScene().getWindow());

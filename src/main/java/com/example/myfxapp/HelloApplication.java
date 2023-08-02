@@ -22,7 +22,7 @@ public class HelloApplication extends Application {
         stage.getIcons().add(icon);
 
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("/styles/Styles.css").toExternalForm());
+        scene.getStylesheets().add(new File("src/main/java/styles/Styles.css").toURI().toString());
 
         stage.setScene(scene);
         stage.show();

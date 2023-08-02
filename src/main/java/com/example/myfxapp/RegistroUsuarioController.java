@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -52,11 +53,17 @@ public boolean cadastraUsuario(){
         return false;
     }
 
-    String criarUsuario= "insert into registro_vendedor(username,password,nome,sobrenome,email,telefone,cpf,num_vendas,valor_comissao) values('"+usernameTextField.getText()+"','"+senhaTextField.getText()+"','"+nomeTextField.getText()+"','"+sobrenomeTextField.getText()+"','"+ emailTextField.getText()+"','"+telefoneTextField.getText()+"','"+cpfTextField.getText()+"',0,0.0);";
-
+    String criarUsuario = "INSERT INTO registro_vendedor (username, password, nome, sobrenome, email, telefone, cpf, num_vendas, valor_comissao) VALUES (?, ?, ?, ?, ?, ?, ?, 0, 0.0)";
     try{
-        Statement stmt=conDB.createStatement();
-        stmt.executeUpdate(criarUsuario);
+        PreparedStatement pstmt = conDB.prepareStatement(criarUsuario);
+        pstmt.setString(1, usernameTextField.getText());
+        pstmt.setString(2, senhaTextField.getText());
+        pstmt.setString(3, nomeTextField.getText());
+        pstmt.setString(4, sobrenomeTextField.getText());
+        pstmt.setString(5, emailTextField.getText());
+        pstmt.setString(6, telefoneTextField.getText());
+        pstmt.setString(7, cpfTextField.getText());
+
         conDB.close();
         return true;
 
