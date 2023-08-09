@@ -62,13 +62,15 @@ public class RegistrarVendaController implements Initializable {
 
         String insertVenda = "insert into registro_venda ( id_produto, id_cliente, id_vendedor, quantidade, valor_total, data ) values ( ?, ?, ?, ?, ?, now() )";
         String checkValor = "select valor from registro_estoque_produtos where nome = ?";
+
+        double valor = 0.0;
         try {
             PreparedStatement selectStatement = conDB.prepareStatement(checkValor);
             selectStatement.setString(1, nome);
 
             ResultSet rs = selectStatement.executeQuery();
             rs.next();
-            double valor = rs.getDouble(1);
+            valor = rs.getDouble(1);
 
             PreparedStatement insertStatement = conDB.prepareStatement(insertVenda);
             insertStatement.setString(1, nome);
@@ -98,7 +100,29 @@ public class RegistrarVendaController implements Initializable {
             System.out.print(e.getMessage());
         }
 
+        updateComissao_Vendas(cpfVendedorText.getText(), valor);
+
         new Controller().changeScene("consultarEstoque.fxml","Consultar estoque",(Stage) nomeProdutoText.getScene().getWindow());
+    }
+
+    private void updateComissao_Vendas(String cpfVendedor, double valor) {
+        String updateComissaoStmt = "update registro_vendedor set valor_comissao = valor_comissao + ?, num_vendas = num_vendas + 1 where cpf like ?;";
+
+    DatabaseHandler connect = new DatabaseHandler();
+        Connection conDB = connect.getConnection();
+
+        try {
+            PreparedStatement stmt = conDB.prepareStatement(updateComissaoStmt);
+            stmt.setDouble(1, (valor*Integer.parseInt(quantidadeText.getText())/100.0));
+            stmt.setString(2, cpfVendedor);
+
+            stmt.executeUpdate();
+
+            conDB.close();
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     private boolean checkCPFV(String cpf, String userType) {
