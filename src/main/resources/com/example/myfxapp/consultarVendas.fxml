@@ -29,14 +29,14 @@
                <children>
                   <MenuButton layoutX="33.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0" text="Buscar Via" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="CPF do Vendedor" />
-                        <MenuItem mnemonicParsing="false" text="CPF do Cliente" />
+                        <MenuItem fx:id="cpfVOption" mnemonicParsing="false" text="CPF do Vendedor" />
+                        <MenuItem fx:id="cpfCOption" mnemonicParsing="false" text="CPF do Cliente" />
                         <MenuItem fx:id="nomeOption" mnemonicParsing="false" text="Nome do Produto" />
                         <MenuItem fx:id="classeOption" mnemonicParsing="false" text="Classificação do Produto" />
-                        <MenuItem fx:id="valorOption" mnemonicParsing="false" text="Preço Máximo do Produto" />
-                        <MenuItem mnemonicParsing="false" text="Preço Mínimo do Produto" />
-                        <MenuItem mnemonicParsing="false" text="Quantidade Comprada Máxima" />
-                        <MenuItem mnemonicParsing="false" text="Quantidade Comprada Mínima" />
+                        <MenuItem fx:id="valorMaxOption" mnemonicParsing="false" text="Valor Máximo da Compra" />
+                        <MenuItem fx:id="valorMinOption" mnemonicParsing="false" text="Valor Mínimo da Compra" />
+                        <MenuItem fx:id="quantMaxOption" mnemonicParsing="false" text="Quantidade Comprada Máxima" />
+                        <MenuItem fx:id="quantMinOption" mnemonicParsing="false" text="Quantidade Comprada Mínima" />
                      </items>
                   </MenuButton>
                </children>
