@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myfxapp.RankingController">
+   <children>
+      <TableView maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="307.0" prefWidth="369.0" translateX="-115.0" translateY="10.0">
+        <columns>
+          <TableColumn fx:id="usernameColumn" prefWidth="164.0" text="Username" />
+          <TableColumn fx:id="numVendasColumn" prefWidth="204.0" text="Número de Vendas" />
+        </columns>
+      </TableView>
+   </children>
+</VBox>

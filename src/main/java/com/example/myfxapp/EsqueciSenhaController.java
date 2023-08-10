@@ -12,7 +12,7 @@ public class EsqueciSenhaController {
     @FXML private Button enviarCodigoButton;
     @FXML private Label labelEsqueciSenha;
     @FXML private Button voltarButton;
-
+    @FXML private Button validarButton;
 
 
     private EmailHandler emailController = new EmailHandler();
@@ -23,8 +23,11 @@ public class EsqueciSenhaController {
     }
     @FXML
     protected void onValidarButtonClick(){
-        if(codigoRecuperacaoTextField.getText().equals(emailController.codigo))
+        if(codigoRecuperacaoTextField.getText().equals(emailController.codigo)) {
             labelEsqueciSenha.setText("Correto!");
+            Data.emailUsuarioEsquecido=emailRecuperacaoTextField.getText();
+            new Controller().changeScene("refazerSenha.fxml", "Nova Senha", (Stage) validarButton.getScene().getWindow());
+        }
 
         else
             labelEsqueciSenha.setText("Codigo incorreto!\nTente Novamente!");
