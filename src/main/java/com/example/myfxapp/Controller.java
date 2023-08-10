@@ -3,6 +3,7 @@ package com.example.myfxapp;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -10,23 +11,36 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ResourceBundle;
 
-public class Controller {
+public class Controller implements Initializable {
     @FXML private Parent root;
     @FXML private Scene scene;
     @FXML private Stage stage;
 
-    @FXML private Label loginText;
+    @FXML private ImageView logo;
+
+    @FXML private Label loginText01;
+    @FXML private Label loginText02;
     @FXML private Button loginButton;
     @FXML private TextField usernameText;
     @FXML private PasswordField passwordText;
     @FXML private Button esqueciButton;
+
+    @FXML
+    public void initialize(URL location, ResourceBundle resources) {
+        File file = new File("src/main/java/com/example/myfxapp/imagens/icon/Logo.png");
+        Image image = new Image(file.toURI().toString());
+        logo.setImage(image);
+    }
 
     public void changeScene(String endereco, String titulo, Stage stageAnterior) {
         if (endereco == null)   return;
@@ -78,7 +92,8 @@ public class Controller {
                 Data.userLogedIn = usernameText.getText();
                 changeScene("menu01.fxml", "Menu Principal",(Stage) loginButton.getScene().getWindow());
             } else {
-                loginText.setText("dados invalidos, digite novamente");
+                loginText01.setText("dados invalidos,");
+                loginText02.setText("digite novamente");
                 usernameText.setText("");
                 passwordText.setText("");
             }
